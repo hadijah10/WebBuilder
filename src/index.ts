@@ -3,7 +3,7 @@ import data from './assets/index.json';
 import { tool } from './tools';
 const main = document.querySelector('main') as HTMLElement
 const theme = document.querySelector('.theme') as HTMLElement
-theme.addEventListener('click',(e:Event)=> {
+theme.addEventListener('click',()=> {
     document.body.classList.toggle('dark-theme');
     if(document.body.classList.contains('dark-theme')){
         theme.style.justifyContent = 'flex-end'

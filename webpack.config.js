@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const loader = require('sass-loader');
 
 
@@ -45,7 +46,7 @@ module.exports= {
     plugins:[
         // new BundleAnalyzerPlugin()
         // new HtmlWebpackPlugin()
-        // new ESLintPlugin(options),
+        new ESLintPlugin({extensions: ['ts'],emitWarning: true,}),
         new ESLintPlugin({
         extensions: ['js'],
         emitWarning: true,
