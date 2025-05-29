@@ -1,5 +1,6 @@
 // src/themeToggle.test.ts
-import { setupThemeToggle } from './buildtest';
+import { setupThemeToggle, data } from './buildtest';
+import tools from '../index.json';
 
 describe('Theme toggle', () => {
   let themeDiv: HTMLElement;
@@ -28,5 +29,20 @@ describe('Theme toggle', () => {
     expect(document.body.classList.contains('dark-theme')).toBe(false);
     expect(themeDiv.style.justifyContent).toBe('flex-start');
     expect(themeDiv.style.backgroundColor).toBe('rgb(255, 255, 255)');
+  });
+});
+describe('Fetch and display data', () => {
+  beforeEach(() => {
+    document.body.innerHTML = `
+    <main></main>
+    `;
+  });
+  it('fetching data ', () => {
+    const main = document.querySelector('main') as HTMLElement;
+    data(main, tools);
+    //counting the number of displayed elements and verifying.
+    expect(main.children.length).toBe(tools.length);
+    expect(main.children[1].textContent).toContain('Vue');
+    expect(main.children[12].textContent).toContain('Figma')
   });
 });
