@@ -1,143 +1,140 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-$fontfam : "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$fontfam: "Poppins", sans-serif;
 
 $text: rgb(4, 12, 56);
-$white: #FFFFFF;
+$white: #ffffff;
 $black: #050505;
-$grey: #F4F4F4;
-$dark-gray: #2D2D2D;
+$grey: #f4f4f4;
+$dark-gray: #2d2d2d;
 $header: #0d3b6b;
 $tablet-break-point: 768px;
-$card-border:1rem;
+$card-border: 1rem;
 $card-width: 35rem;
-*{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg: $white;
+  --text-color: $black;
+}
+.dark-theme {
+  --bg: $black;
+  --text-color: $grey;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  // color: $text;
+  background-color: var(--bg);
+  color: var(--text-color);
+  font-family: $fontfam, sans-serif;
+}
+@mixin flex($gap, $just-content, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just-content;
+  align-items: center;
+  gap: $gap;
+}
+header {
+  background-color: $header;
+  padding-right: 3rem;
+}
+nav {
+  @include flex(0rem, space-between);
+  padding: 0 0.8rem;
+
+  ul {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-:root{
-    --bg:$white;
-    --text-color:$black;
-}
-.dark-theme{
-    --bg:$black;
-    --text-color:$grey;
-}
-body{
-    width: 100vw;
-    min-height: 100vh;
-    // color: $text;
-    background-color: var(--bg);
-    color: var(--text-color);
-    font-family: $fontfam,sans-serif;
-}
-@mixin flex($gap,$just-content,$direction:row,){
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $just-content;
-    align-items: center;
-    gap: $gap;
-}
-header{
-     background-color: $header;
-     padding-right: 3rem;
-}
-nav{
-    @include flex(0rem, space-between);
-    padding: 0 0.8rem;
-   
-    ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        @include flex(2rem,space-between);
-
+    list-style: none;
+    @include flex(2rem, space-between);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      color: $white;
     }
-    a{
-        text-decoration: none;
-        color: inherit;
-        &:hover{
-            color: $white;
-        }
-        &:active{
-            border-bottom: 2px solid $white ;
-        }
+    &:active {
+      border-bottom: 2px solid $white;
     }
-    .icon{
-        display: none; 
-    }
+  }
+  .icon {
+    display: none;
+  }
 }
-section{
-    .theme{
-    width:2rem;
+section {
+  .theme {
+    width: 2rem;
     height: 0.5rem;
     border-radius: 0.8rem;
     transition: all 0.2s ease-in;
-    background-color: lighten($header,90%);
-   padding: 5px;
-   @include flex(0rem,start);
-   transition: all 0.2s ease-in;
-}
-
-.theme-switcher{
-     width:0.9rem;
-     height: 0.9rem;
-     background-color: $header;
-     border-radius: 50%;
-}
-}
-button{
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: lighten($header,5%);
-    color: $white;
-    cursor: pointer;
-    &:hover{
-       color: lighten($header,5%);
-        background-color: $white;
-    }
-}
-.end{
-       @include flex(5rem,space-between);
-        justify-content: start;    
-}
-main{
-    @include flex(3rem,center,column);
-    padding: 2rem 0rem;
-    div{
-        max-width: $card-width;
-        padding: 2rem;
-        background-color: rgba($color: $header, $alpha: 0.05);
-        border-radius: $card-border;
-    }
-}
-@media(max-width: $tablet-break-point){
-    .end{
-        button,ul{
-            display: none;
-        }
-    }
-    nav{
-       .icon{
-        display: block;
-         @include flex(0rem,start);
-         svg{
-        // fill: $white;
-        &:first-child{
-            display: block;
-        }
-        &:last-child{
-            display: none;
-        }
-       }
-         
-    }
-    }
-}
-footer{
+    background-color: lighten($header, 90%);
+    padding: 5px;
+    @include flex(0rem, start);
+    transition: all 0.2s ease-in;
+  }
+  .theme-switcher {
+    width: 0.9rem;
+    height: 0.9rem;
     background-color: $header;
-    padding: 1rem;
-    @include flex(0rem,center);
+    border-radius: 50%;
+  }
+}
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: lighten($header, 5%);
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    color: lighten($header, 5%);
+    background-color: $white;
+  }
+}
+.end {
+  @include flex(5rem, space-between);
+  justify-content: start;
+}
+main {
+  @include flex(3rem, center, column);
+  padding: 2rem 0rem;
+  div {
+    max-width: $card-width;
+    padding: 2rem;
+    background-color: rgba($color: $header, $alpha: 0.05);
+    border-radius: $card-border;
+  }
+}
+@media (max-width: $tablet-break-point) {
+  .end {
+    button,
+    ul {
+      display: none;
+    }
+  }
+  nav {
+    .icon {
+      display: block;
+      @include flex(0rem, start);
+      svg {
+        // fill: $white;
+        &:first-child {
+          display: block;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+footer {
+  background-color: $header;
+  padding: 1rem;
+  @include flex(0rem, center);
 }

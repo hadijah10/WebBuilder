@@ -9,9 +9,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "module": "esnext",
-    "noEmit": true,
+    "noEmit": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "noEmitOnError":false,
   },
   "include": ["src"]
 }
