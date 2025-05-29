@@ -1,5 +1,5 @@
-export interface tool{
-    name:string;
-    released: number;
-    summary: string;
+export interface tool {
+  name: string;
+  released: number;
+  summary: string;
 }

@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    // "module": "ES6",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "./dist",
@@ -10,7 +9,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "module": "esnext",
-    "noEmit": true,
+    "noEmit": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError":false,
   },
   "include": ["src"]
 }

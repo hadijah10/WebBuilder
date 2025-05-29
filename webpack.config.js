@@ -2,7 +2,8 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const loader = require('sass-loader');
+
+
 
 
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -30,14 +31,19 @@ module.exports= {
         use: 'html-loader'
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         // test: /\.ts?$/,
-        test: /\.ts$/,
-        use: {loader:'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        },
-      exclude: /node_modules/,
-        },
+      //   test: /\.ts$/,
+      //   use: {loader:'babel-loader',
+      //   options: {
+      //     presets: ['@babel/preset-env']
+      //   },
+      // exclude: /node_modules/,
+      //   },
         
       },
         ]
@@ -45,9 +51,8 @@ module.exports= {
     plugins:[
         // new BundleAnalyzerPlugin()
         // new HtmlWebpackPlugin()
-        // new ESLintPlugin(options),
         new ESLintPlugin({
-        extensions: ['js'],
+        extensions: ['js','ts'],
         emitWarning: true,
           }),
         new CleanWebpackPlugin(),
