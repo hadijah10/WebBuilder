@@ -38,9 +38,9 @@ body {
   color: var(--text-color);
   font-family: $fontfam, sans-serif;
 }
-body.dark-theme{
-    background-color: $dark-gray;
-    color: $grey;
+body.dark-theme {
+  background-color: $dark-gray;
+  color: $grey;
 }
 
 header {
@@ -114,7 +114,6 @@ main {
     background-color: rgba($color: $header, $alpha: 0.05);
     border-radius: $card-border;
   }
- 
 }
 @media (max-width: $tablet-break-point) {
   .end {
