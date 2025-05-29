@@ -12,6 +12,7 @@
     "noEmit": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["jest"], // important for type support
     "noEmitOnError":false,
   },
   "include": ["src"]
