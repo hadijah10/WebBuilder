@@ -1,0 +1,2 @@
+# CODE QUALITY REPORT
+### After applying linting, there were no linting errors displayed. The linting rules included, throwing a warning when there is a console log. Applying prettier formating. Applying the use of strict equal instead of strict equal. Dsiplaying a warning when there are unused and undefined variables.
