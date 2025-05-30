@@ -10,10 +10,10 @@
     "dev": "webpack serve",
     "lint": "eslint src/**/*.{js,ts} ",
     "lint:fix": "eslint src/**/*.{js,ts} --fix",
-    "format": "prettier --write \"src/**/*.{ts,js,json,css,scss,html}\" \"dist/*.{ts,js,json,css,scss,html}\"",
+    "format": "prettier --write \"src/**/*.{ts,js,json,css,scss,html}\"",
     "check": "npm run lint && npm run lint:fix && npm run format",
     "prepare": "husky",
-    "precommit": "npm run check"
+    "precommit": "npm run check && npm run test"
   },
   "jest": {
     "preset": "ts-jest", 
