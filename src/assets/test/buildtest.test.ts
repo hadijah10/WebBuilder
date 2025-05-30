@@ -43,6 +43,6 @@ describe('Fetch and display data', () => {
     //counting the number of displayed elements and verifying.
     expect(main.children.length).toBe(tools.length);
     expect(main.children[1].textContent).toContain('Vue');
-    expect(main.children[12].textContent).toContain('Figma')
+    expect(main.children[12].textContent).toContain('Figma');
   });
 });

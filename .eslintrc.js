@@ -18,9 +18,16 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error', // Fail on formatting issues
+    // Warn on unused variables
      'no-console': 'warn',
+      // Enforce semicolons
+    'semi': ['error', 'always'],
+    //Enforce the use of strict equal to
       eqeqeq: ['error', 'always'],
+       //Warn on unused variables.
       '@typescript-eslint/no-unused-vars': 'warn',
+      // Error on use of undefined variables
+      '@typescript-eslint/no-undef': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'warn',
   },
 };
