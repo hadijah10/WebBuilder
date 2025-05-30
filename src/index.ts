@@ -1,4 +1,4 @@
-import './style.scss';
+import './styles/style.scss';
 import data from './assets/index.json';
 import { tool } from './tools';
 const main = document.querySelector('main') as HTMLElement;

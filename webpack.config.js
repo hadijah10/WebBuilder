@@ -21,7 +21,21 @@ module.exports= {
         rules: [
                 {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader',
+          {
+            loader: 'css-loader', // turns css into js
+            options: { sourceMap: true }
+          }
+          ,{loader: 'sass-loader',
+         
+              options: {
+                 sourceMap: true,
+    sassOptions: {
+      includePaths: ['./src/styles']  // or wherever your partials live
+    }
+  }
+        }],
+     
       }, {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource'
